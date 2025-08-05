@@ -3,132 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Survey Form</title>
-    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header>
-      <h1 id="title">Angshuman's Survey Form</h1>
-      <p id="description">
-        Thanks for taking your time to give a genuine feedback!
-      </p>
-    </header>
-    <form  id="survey-form">
-      <div class="name">
-        <label id="name-label">Name</label
-        ><input id="name" type="text" required placeholder="Enter your name" />
-      </div>
-      <div class="email">
-        <label id="email-label">Email</label
-        ><input
-          id="email"
-          type="email"
-          required
-          placeholder="Enter your email"
-        />
-      </div>
-      <div class="age">
-        <label id="number-label">Age <span>(optional)</span></label
-        ><input
-          id="number"
-          type="number"
-          min="13"
-          max="120"
-          placeholder="Age"
-        />
-      </div>
-      <fieldset class="list">
-        <legend>What best describes your current role?</legend>
-        <select id="dropdown" required>
-          <option disabled selected>(select option)</option>
-          <option value="student">Student</option>
-          <option value="undergraduatet">Undergraduate</option>
-          <option value="postgraduate">Postgraduate</option>
-          <option value="job">Job</option>
-          <option value="#">Other</option>
-        </select>
-      </fieldset>
-      <fieldset class="choice">
-        <legend>Would you recommend this demo for references?</legend>
-        <label for="rate"
-          ><input
-            class="inline"
-            id="rate"
-            type="radio"
-            name="recommend"
-            value="#"
-          />Maybe</label
-        >
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-white shadow-lg rounded-lg p-8">
+      <header class="mb-6 text-center">
+        <h1 id="title" class="text-3xl font-bold text-gray-800">
+          Angshuman's Survey Form
+        </h1>
+        <p id="description" class="text-gray-600 mt-2">
+          Thanks for taking your time to give a genuine feedback!
+        </p>
+      </header>
 
-        <label for="rate2"
-          ><input
-            class="inline"
-            id="rate2"
-            type="radio"
-            name="recommend"
-            value="#"
-          />Definitely</label
-        >
-      </fieldset>
-      <fieldset class="select">
-        <legend>What further improvements would you like to see?</legend>
-        <label for="challenge"
-          ><input
-            class="inline"
-            id="challenge"
-            type="checkbox"
-            value="challenge"
-            checked
-          />Challenges</label
-        >
-        <label for="templates"
-          ><input
-            class="inline"
-            id="templates"
-            type="checkbox"
-            value="templates"
-          />Templates</label
-        >
-        <label for="courses"
-          ><input
-            class="inline"
-            id="courses"
-            type="checkbox"
-            value="courses"
-          />Courses</label
-        >
-        <label for="tutorials"
-          ><input
-            class="inline"
-            id="tutorials"
-            type="checkbox"
-            value="tutorials"
-          />Tutorials</label
-        >
+      <form id="survey-form" class="space-y-6">
+        <div>
+          <label id="name-label" for="name" class="block font-medium text-gray-700">Name</label>
+          <input
+            id="name"
+            type="text"
+            required
+            placeholder="Enter your name"
+            class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-        <label for="blog"
-          ><input
-            class="inline"
-            id="blog"
-            type="checkbox"
-            value="blog"
-          />Blog</label
-        >
-        <label for="additional surveys"
-          ><input
-            class="inline"
-            id="additional surveys"
-            type="checkbox"
-            value="additional surveys"
-          />Additional Surveys</label
-        >
-      </fieldset>
-      <div class="commt">
-        <label for="comment">Any further suggestions?</label>
-        <textarea id="comment" placeholder="Add your comments..."></textarea>
-      </div>
-      <div><input type="submit" id="submit" /></div>
-    </form>
+        <div>
+          <label id="email-label" for="email" class="block font-medium text-gray-700">Email</label>
+          <input
+            id="email"
+            type="email"
+            required
+            placeholder="Enter your email"
+            class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div>
+          <label id="number-label" for="number" class="block font-medium text-gray-700"
+            >Age <span class="text-gray-500 text-sm">(optional)</span></label
+          >
+          <input
+            id="number"
+            type="number"
+            min="13"
+            max="120"
+            placeholder="Age"
+            class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div>
+          <label for="dropdown" class="block font-medium text-gray-700">What best describes your current role?</label>
+          <select
+            id="dropdown"
+            required
+            class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option disabled selected>(select option)</option>
+            <option value="student">Student</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="postgraduate">Postgraduate</option>
+            <option value="job">Job</option>
+            <option value="#">Other</option>
+          </select>
+        </div>
+
+        <fieldset class="mt-4">
+          <legend class="block font-medium text-gray-700 mb-2">Would you recommend this demo for references?</legend>
+          <div class="space-y-2">
+            <label class="inline-flex items-center">
+              <input type="radio" name="recommend" class="text-blue-600" />
+              <span class="ml-2">Maybe</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="recommend" class="text-blue-600" />
+              <span class="ml-2">Definitely</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="mt-4">
+          <legend class="block font-medium text-gray-700 mb-2">What further improvements would you like to see?</legend>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="challenge" value="challenge" checked class="text-blue-600" />
+              <span class="ml-2">Challenges</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="templates" value="templates" class="text-blue-600" />
+              <span class="ml-2">Templates</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="courses" value="courses" class="text-blue-600" />
+              <span class="ml-2">Courses</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="tutorials" value="tutorials" class="text-blue-600" />
+              <span class="ml-2">Tutorials</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="blog" value="blog" class="text-blue-600" />
+              <span class="ml-2">Blog</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="additional-surveys" value="additional surveys" class="text-blue-600" />
+              <span class="ml-2">Additional Surveys</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="comment" class="block font-medium text-gray-700">Any further suggestions?</label>
+          <textarea
+            id="comment"
+            placeholder="Add your comments..."
+            class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 h-24 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <div class="text-center">
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md cursor-pointer"
+          />
+        </div>
+      </form>
+    </div>
   </body>
 </html>
